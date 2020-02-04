@@ -1,4 +1,19 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/Looping.scala:31:30: illegal start of simple expression[0m
-[0m[[0m[31merror[0m] [0m[0m		for (i <- (1 to 5).reverse)) {[0m
-[0m[[0m[31merror[0m] [0m[0m		                           ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/Looping.scala:15:3: illegal start of declaration (possible cause: missing `=' in front of current method body)[0m
+[0m[[0m[31merror[0m] [0m[0m		while (i < 1000){[0m
+[0m[[0m[31merror[0m] [0m[0m		^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/Looping.scala:19:3: illegal start of declaration (possible cause: missing `=' in front of current method body)[0m
+[0m[[0m[31merror[0m] [0m[0m		count[0m
+[0m[[0m[31merror[0m] [0m[0m		^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/Looping.scala:25:3: illegal start of declaration (possible cause: missing `=' in front of current method body)[0m
+[0m[[0m[31merror[0m] [0m[0m		do {[0m
+[0m[[0m[31merror[0m] [0m[0m		^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/Looping.scala:29:3: illegal start of declaration (possible cause: missing `=' in front of current method body)[0m
+[0m[[0m[31merror[0m] [0m[0m		count[0m
+[0m[[0m[31merror[0m] [0m[0m		^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/Looping.scala:40:3: illegal start of declaration (possible cause: missing `=' in front of current method body)[0m
+[0m[[0m[31merror[0m] [0m[0m		for (i <- (1 to 1000)) {[0m
+[0m[[0m[31merror[0m] [0m[0m		^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/Looping.scala:43:3: illegal start of declaration (possible cause: missing `=' in front of current method body)[0m
+[0m[[0m[31merror[0m] [0m[0m		count[0m
+[0m[[0m[31merror[0m] [0m[0m		^[0m
+[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
