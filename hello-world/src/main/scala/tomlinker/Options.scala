@@ -8,14 +8,13 @@ object Arrays extends App {
  	println(checkArrayValue(totalArray, 99))
  	println(checkArrayValue(totalArray, 2 ))
 
- 	
-}
+ 	def checkArrayValue(array: Int => Option[Int], index: Int): String = {
+   		array(index) match {
+     	case Some(num) => s"Element $num found for index $index"
+     	case None => s"No element found for index $index"
+   	}
+ }
 
-def checkArrayValue(array: Int => Option[Int], index: Int): String = {
- 	   	array(index) match {
-   			case Some(num) => s"Element $num found for index $index"
-   			case None      => s"No element found for index $index"
-   		}
- 	}
+}
 
 
