@@ -1,0 +1,35 @@
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [hello / Test / testQuick] Found inputs: /Users/thomlink/Documents/workspace/scala/hello-world/*.{java,scala},/Users/thomlink/Documents/workspace/scala/hello-world/src/main/java/**/*.{java,scala},/Users/thomlink/Documents/workspace/scala/hello-world/src/main/resources/**/*,/Users/thomlink/Documents/workspace/scala/hello-world/src/main/scala/**/*.{java,scala},/Users/thomlink/Documents/workspace/scala/hello-world/src/main/scala-2.12/**/*.{java,scala},/Users/thomlink/Documents/workspace/scala/hello-world/src/test/java/**/*.{java,scala},/Users/thomlink/Documents/workspace/scala/hello-world/src/test/resources/**/*,/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/**/*.{java,scala},/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala-2.12/**/*.{java,scala}[0m
+[0m[[0m[0minfo[0m] [0m[0m1. Monitoring source files for hello/testQuick...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mhello / Test / testQuick - Accepted event for /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala (previous stamp: Hash(62f175d305ca160e02ffcb202a9ab431d3a8047d), current stamp: Hash(805953432f0c4d2892235b87fa0c7c5825012639))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala -> Trigger. Returning: (Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala, 2020-Feb-03 14:35:14.337 BT),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala. Running 'testQuick'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala, 2020-Feb-03 14:35:14.337 BT).[0m
+[0m[[0m[0minfo[0m] [0m[0m2. Monitoring source files for hello/testQuick...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mhello / Test / testQuick - Accepted event for /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala (previous stamp: Hash(805953432f0c4d2892235b87fa0c7c5825012639), current stamp: Hash(15d6efeb5e748e67e7dfc6e2973a4c086434578e))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala -> Trigger. Returning: (Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala, 2020-Feb-03 14:35:34.312 BT),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala. Running 'testQuick'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala, 2020-Feb-03 14:35:34.312 BT).[0m
+[0m[[0m[0minfo[0m] [0m[0m3. Monitoring source files for hello/testQuick...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0mhello / Test / testQuick - Accepted event for /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala,FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false),FileAttributes(isDirectory = false, isOther = false,isRegularFile = true, isSymbolicLink = false))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived event for path /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreating update event for modified /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala (previous stamp: Hash(15d6efeb5e748e67e7dfc6e2973a4c086434578e), current stamp: Hash(805953432f0c4d2892235b87fa0c7c5825012639))[0m
+[0m[[0m[0mdebug[0m] [0m[0mReceived file event actions: /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala -> Trigger. Returning: (Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala, 2020-Feb-03 14:35:36.587 BT),Trigger)[0m
+[0m[[0m[0minfo[0m] [0m[0mBuild triggered by /Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala. Running 'testQuick'.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received file event Trigger for Update(/Users/thomlink/Documents/workspace/scala/hello-world/src/test/scala/HelloSpec.scala, 2020-Feb-03 14:35:36.587 BT).[0m
+[0m[[0m[0minfo[0m] [0m[0m4. Monitoring source files for hello/testQuick...[0m
+[0m[[0m[0minfo[0m] [0m[0m   Press <enter> to interrupt or '?' for more options.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received input event: Run().[0m
+[0m[[0m[0mdebug[0m] [0m[0m[watch] [debug] Received input event: Run().[0m
