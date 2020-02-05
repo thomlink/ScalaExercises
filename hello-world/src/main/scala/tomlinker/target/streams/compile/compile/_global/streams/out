@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/tom0396/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/GenderParser.scala:24:24: not found: value xs[0m
+[0m[[0m[31merror[0m] [0m[0m		case _ => count_male(xs)[0m
+[0m[[0m[31merror[0m] [0m[0m		                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

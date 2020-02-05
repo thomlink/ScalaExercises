@@ -1,0 +1,6 @@
+compile
+scala
+val a = List(13, 2, 3, 4)
+val a = List(13, 2, 3, 4);
+run
+exit
