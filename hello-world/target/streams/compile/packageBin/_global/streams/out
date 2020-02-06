@@ -14,8 +14,12 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/Hello$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/checkers.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/checkers.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/Sequential$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/Sequential$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/Hello$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/Hello$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/Sequential$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/Sequential$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/dartboard$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/dartboard$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/recursion$.class[0m
@@ -30,8 +34,12 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/recursion.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/Arrays$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/Arrays$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/FootballResults$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/FootballResults$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/extension$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/extension$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/FootballResults$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/FootballResults$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/looping.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/looping.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/Hello.class[0m
@@ -40,6 +48,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/input$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/dartboard$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/dartboard$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/Sequential.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/Sequential.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/checkers$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/checkers$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/voweldestroyer$delayedInit$body.class[0m
@@ -64,6 +74,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/extension$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/looping$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/looping$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/FootballResults.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/FootballResults.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/genderParser$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/genderParser$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/checkers$delayedInit$body.class[0m
