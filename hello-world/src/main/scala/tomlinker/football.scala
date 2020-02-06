@@ -11,22 +11,70 @@ import scala.io.StdIn._
 
 object FootballResults extends App{
 
-	val results = "Manchester United 1 Chelsea 0, Arsenal 1 Manchester United 1, Manchester United 3 Fulham 1, Liverpool 2 Manchester United 1, Swansea 2 Manchester United 4, Manchester United 1 Chelsea 3, Chelsea 3 Manchester United 0, Chelsea 2 Manchester United 2"
-	//val results = "Manchester United 1 Chelsea 1, Arsenal 1 Manchester United 1, Manchester United 3 Fulham 3, Liverpool 2 Manchester United 1, Swansea 2 Manchester United 4"
+	val results = "Manchester United 1 Chelsea 0, Arsenal 1 Manchester United 1, Manchester United 3 Fulham 1, Liverpool 2 Manchester United 1, Swansea 2 Manchester United 4"
 
+	val wins 			= MUwins(results)
+	val defeats 		= MUdefeats(results)
+	val draws 			= MUdraws(results)
+	val goalsScored 	= MUgoalsScored(results)
+	val goalsConceded 	= MUgoalsConceded(results)
+	val points 			= (wins * 3) + draws
 
-	val wins = MUwins(results)
-	println(wins)
+	println("Manchester United Wins           : " + wins.toString)
+	println("Manchester United defeats        : " + defeats.toString)
+	println("Manchester United Draws          : " + draws.toString)
+	println("Manchester United Goals Scored   : " + goalsScored.toString)
+	println("Manchester United Goals Conceded : " + goalsConceded.toString)
+	println("Manchester United Points         : " + points.toString)
+
+	def MUgoalsScored(results: String) : Int =  {
+		def MUgoalsScored_helper(results: List[String]) : Int = results match {
+			case Nil => 0
+			case x::xs if (MUhome(x))  => homeGoals(x) + MUgoalsScored_helper(xs)
+			case x::xs if (!MUhome(x)) => awayGoals(x) + MUgoalsScored_helper(xs)
+		}
+		MUgoalsScored_helper(results.split(",").toList)
+	}
+
+	def MUgoalsConceded(results: String) : Int = {
+		def MUgoalsConceded_helper(results: List[String]) : Int = results match {
+			case Nil => 0
+			case x::xs if (!MUhome(x)) => homeGoals(x) + MUgoalsConceded_helper(xs)
+			case x::xs if (MUhome(x))  => awayGoals(x) + MUgoalsConceded_helper(xs)
+		}
+		MUgoalsConceded_helper(results.split(",").toList)
+	}
+	
 
 	def MUwins(results: String) : Int = {
-		println(results.split(",").toList)
+		def MUwins_helper(results: List[String]) : Int = results match {
+			case Nil => 0
+			case x::xs if ((winner(x) == "h") &&  MUhome(x) ) => 1 + MUwins_helper(xs)
+			case x::xs if ((winner(x) == "a") && !MUhome(x) ) => 1 + MUwins_helper(xs)
+			case x::xs               						  => MUwins_helper(xs)	
+		}
 		MUwins_helper(results.split(",").toList)
+	}
+	def MUdefeats(results: String) : Int = {
+		def MUdefeats_helper(results: List[String]) : Int = results match {
+			case Nil => 0
+			case x::xs if ((winner(x) == "a") &&  MUhome(x) ) => 1 + MUdefeats_helper(xs)
+			case x::xs if ((winner(x) == "h") && !MUhome(x) ) => 1 + MUdefeats_helper(xs)
+			case x::xs               						  => MUdefeats_helper(xs)	
+		}
+		MUdefeats_helper(results.split(",").toList)
+	}
+	def MUdraws(results: String) : Int = {
+		def MUdraws_helper(results: List[String]) : Int = results match {
+			case Nil => 0
+			case x::xs if (winner(x) == "d") => 1 + MUdraws_helper(xs)
+			case x::xs               		 => MUdraws_helper(xs)	
+		}
+		MUdraws_helper(results.split(",").toList)
 	}
 
 
 	def MUhome(result: String) : Boolean = {
-		
-		//println(result.indexOf("Manchester United"))
 		result.indexOf("Manchester United") < 2
 	}
 
@@ -43,18 +91,15 @@ object FootballResults extends App{
 		homeGoals(result.reverse)
 	}
 
-	def MUwins_helper(results: List[String]) : Int = results match {
-		case Nil => 0
-		case x :: xs if (MUhome(x)) && (homeGoals(x) > awayGoals(x)) => 1 + MUwins_helper(xs)
-		case x :: xs if (MUhome(x)) && (homeGoals(x) < awayGoals(x)) => 0 + MUwins_helper(xs)	
-		case x :: xs if (!MUhome(x)) && (homeGoals(x) > awayGoals(x)) => 0 + MUwins_helper(xs)
-		case x :: xs if (!MUhome(x)) && (homeGoals(x) < awayGoals(x)) => 1 + MUwins_helper(xs)	
-		case x :: xs => MUwins_helper(xs)
-
-
+	def winner(result: String) : String = result match {
+		case x if (homeGoals(result) > awayGoals(result))  => "h"
+		case x if (homeGoals(result) < awayGoals(result))  => "a"
+		case x if (homeGoals(result) == awayGoals(result)) => "d"
+		case _                    => "error"	
 	}
+
 	def scores(results: List[String]) : List[(Int, Int)] = results match { 
-		case Nil => (0,0) :: Nil
+		case Nil =>  Nil
 		case x :: xs => (homeGoals(x), awayGoals(x)) :: scores(xs)
 	}
 
