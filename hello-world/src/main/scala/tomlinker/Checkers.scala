@@ -21,14 +21,21 @@ object checkers extends App{
 	
 	
 	def checkerboard(x: Int) : String = {
-		def checkerboardRow(x: Int) : String = x match {
-			case x if (x == 1) => " x\n"
-			case y if (y % 2 == 0)  => " o " + checkerboardRow(x-1)
-			case y if (y % 2 != 0)  => " x " + checkerboardRow(x-1)
+		def checkerboardRow(x: Int, start: String) : String = (x, start) match {
+			case (1, " o ")                 =>  " x \n"
+			case (1, " x ")                 =>  " o \n"
+			case (y, " o ") if (y % 2 == 0) =>  " o " + checkerboardRow(x-1, start)
+			case (y, " o ")                 =>  " x " + checkerboardRow(x-1, start)
+			case (y, " x ") if (y % 2 == 0) =>  " x " + checkerboardRow(x-1, start) 
+			case (y, " x ")                 =>  " o " + checkerboardRow(x-1, start)
+			
+
 		}
 		def checkerboard_helper(max: Int, current: Int) : String = current match {
-			case x if (x == max) => checkerboardRow(x)
-			case _ => checkerboardRow(max) + checkerboard_helper(max, current + 1)
+			case x if (x == max) && (x % 2 == 0) => checkerboardRow(x, " o ")
+			case x if (x == max)                 => checkerboardRow(x, " x ")
+			case x if (x % 2 == 0) => checkerboardRow(max, " o ") + checkerboard_helper(max, current + 1)
+			case _ => checkerboardRow(max, " x ") + checkerboard_helper(max, current + 1)
 		}
 		checkerboard_helper(x, 1)
 	}
