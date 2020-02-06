@@ -8,24 +8,36 @@ object recursion extends App{
 	//println(downToOne(20))
 
 
-	val nums = (1 to 10 by 2)
-
+	val nums = (1 to 1000)
+	var count = 0 // I hate that I had to do this But could't see another way
 	//foreach
-	nums.foreach(num => println(num))
+	nums.foreach(num => {
+		if (num % 3 == 0) count = count + 1
+	})
 
-	//map
-	val mapped = nums.map(num => println(num))
+	println(s"ForEach - count of numbers divisible by 3 is $count")
+
+	
+	
+	val mapped = nums.map(num => if (num % 3 == 0) {1} else {0} )
+	val sum = mapped.count(_ == 1)
+	println(s"Map - count of numbers divisible by 3 is $sum")		
 
 	//fold
-	val folded = nums.fold("")(
-	        (acc, num) => acc + num.toString + "\n"
+	val folded = nums.fold(0)(
+	        (sum, num) => {
+	        	if (num % 3 == 0) {
+	        		sum + 1
+	        	} else {
+	        		sum
+	        	}
+	    	}
 	    )
-	println(folded)
+	println(s"Fold - count of numbers divisible by 3 is $folded")
 
 	//filter
-	(1 to 20).filter(num => 
-	num % 2 != 0 && num <= 10).foreach(println)
-
+	val filtered = (1 to 1000).filter(num => num % 3 == 0 )
+	println("Filter - count of numbers divisible by 3 is " + filtered.length.toString)
 
 
 

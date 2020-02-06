@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/recursion.scala:15:21: could not optimize @tailrec annotated method downToOne: it contains a recursive call not in tail position[0m
-[0m[[0m[31merror[0m] [0m[0m			current.toString + downToOne(current - 1)[0m
-[0m[[0m[31merror[0m] [0m[0m			                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/src/main/scala/tomlinker/extension.scala:19:76: too many arguments (2) for method diagonally: (word: String)String[0m
+[0m[[0m[31merror[0m] [0m[0m				case _ => makeRow(pos, word.charAt(pos)) + "\n" + diagonally(word, pos + 1)  [0m
+[0m[[0m[31merror[0m] [0m[0m				                                                                       ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

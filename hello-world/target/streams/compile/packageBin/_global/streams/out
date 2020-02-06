@@ -22,6 +22,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/recursion.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/Arrays$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/Arrays$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/extension$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/extension$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/looping.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/looping.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/Hello.class[0m
@@ -36,8 +38,12 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/responding$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/looping$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/looping$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/extension.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/extension.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/recursion$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/recursion$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/extension$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/extension$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/looping$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/thomlink/Documents/GitHub/ScalaExercises/hello-world/target/scala-2.12/classes/com/tomlinker/looping$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/tomlinker/responding$delayedInit$body.class[0m
