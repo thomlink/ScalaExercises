@@ -20,6 +20,7 @@ object FootballResults extends App{
 	val goalsConceded 	= MUgoalsConceded(results)
 	val points 			= (wins * 3) + draws
 
+	println(results + "\n\n")
 	println("Manchester United Wins           : " + wins.toString)
 	println("Manchester United defeats        : " + defeats.toString)
 	println("Manchester United Draws          : " + draws.toString)
@@ -94,8 +95,8 @@ object FootballResults extends App{
 	def winner(result: String) : String = result match {
 		case x if (homeGoals(result) > awayGoals(result))  => "h"
 		case x if (homeGoals(result) < awayGoals(result))  => "a"
-		case x if (homeGoals(result) == awayGoals(result)) => "d"
-		case _                    => "error"	
+		case => "d"
+		
 	}
 
 	def scores(results: List[String]) : List[(Int, Int)] = results match { 
