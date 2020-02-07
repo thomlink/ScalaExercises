@@ -21,3 +21,27 @@
 
 
 
+package com.tomlinker
+
+import scala.annotation.tailrec
+import scala.io.StdIn._
+
+object Checkout extends App{
+
+
+	val order = "A,B,C,D,A,B,C,A,D,C,B,A,C,A"
+	println(quant("A", order))
+
+	def quant(item: String, order:String) : Int = {
+		def quant_helper(item: String, order:List[String]) : Int = order match {
+			case Nil 		=> 0
+			case item::xs 	=> 1 + quant(item, xs)
+			case _::xs 		=> quant(item, xs)
+		}
+		quant_helper(item, order.split("").toList)
+	}
+	
+
+
+
+}
