@@ -34,29 +34,60 @@ object Checkout extends App{
 
 
 
-	val order = "A,B,C,D,A,B,C,A,D,C,B,A,C,A"
+	val order = "A,D,C,D,A,B,C,A,D,C,B,A,C,A"
 	val prices = List("A 50 3 for 130","B 30 2 for 45","C 20","D 15")
 
-	val prices_formatted = format_prices(prices))
-	val order_formatted = println(format_order(order))
+	val prices_formatted = format_prices(prices)
+	val orders_formatted = format_order(order)
 
-	println(2/2)
+	println(prices_formatted)
+	println(orders_formatted)
+	println(get_item_cost(orders_formatted(0) , prices_formatted));
 	
+	println(get_total_cost(orders_formatted, prices_formatted))
 	
 
-	//def item_cost(item_quantity: Int, price: List[String]) = price.length match {
-	//	case x if x < 3 => { //no deals on
-	//		item_quantity
-	//	}
-	//	case _ => {
-//
-	//	}
-	//	val deals = item_quantity/price()
-	//	}
-
-	//}
+	def get_total_cost(orders: List[ItemOrder], prices: List[ItemPrice]) : Double = orders match {
+		case Nil => 0
+		case x::xs => get_item_cost(x, prices) + get_total_cost(xs, prices)
+	}
 
 
+	def get_item_cost(order: ItemOrder, prices: List[ItemPrice] ) : Double = {
+		def helper(order: ItemOrder, price: ItemPrice) : Double = price.deal match {
+			case None => {
+				order.quantity  * price.unit_price
+			}
+			case Some(deal) => {
+				val deal_cost = get_deal_cost(order, deal)
+				val non_deal_cost = (order.quantity % deal.quantity) * price.unit_price
+				deal_cost + non_deal_cost
+			}
+		}
+		
+		val price = get_item_price_from_list(order.name, prices)
+		if (price == None) {
+			0
+		} else {
+			helper(order, price.get)
+		}
+		
+	}
+
+	def get_item_price_from_list(item_name: String, prices: List[ItemPrice] ) : Option[ItemPrice] = prices match {
+		case Nil => None
+		case x::xs if (x.name == item_name) => Some(x)
+		case _::xs => get_item_price_from_list(item_name, xs)
+	}
+	
+
+	def get_deal_cost(order: ItemOrder, deal: Deal) : Double = {
+		val n_deals = order.quantity / deal.quantity
+		if (n_deals > 0) {
+			n_deals * deal.price
+		} else 0
+	}
+	
 
 	def format_prices(prices: List[String]) : List[ItemPrice] = prices match {
 		case Nil => Nil
