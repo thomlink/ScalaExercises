@@ -29,7 +29,9 @@ import scala.io.StdIn._
 object Checkout extends App{
 
 
-	val order = "A,B,C,D,A,B,C,A,D,C,B,A,C,A"
+	val order = "ABCDABCADCBACA"
+	//val prices = List("A 50 3 for 130","B 30 2 for 45","C 20","D 15")
+
 	println(quant("A", order))
 
 	def quant(item: String, order:String) : Int = {
@@ -40,8 +42,30 @@ object Checkout extends App{
 		}
 		quant_helper(item, order.split("").toList)
 	}
+
+	def countOccurrences(src: String, tgt: String): Int =
+  		src.sliding(tgt.length).count(window => window == tgt)
 	
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
