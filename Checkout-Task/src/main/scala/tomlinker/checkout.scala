@@ -49,7 +49,7 @@ object Checkout extends App{
 	
 	println(get_total_cost(orders_formatted, prices_formatted))
 	
-	def makeOrder(order: String, prices: List[String]) : Double = {
+	def make_order(order: String, prices: List[String]) : Double = {
 		get_total_cost(format_order(order), format_prices(prices))
 	}
 
@@ -62,13 +62,13 @@ object Checkout extends App{
 
 	def get_item_cost(order: ItemOrder, prices: List[ItemPrice] ) : Double = {
 		def helper(order: ItemOrder, price: ItemPrice) : Double = price.deal match {
-			case None => order.quantity  * price.unit_price
+			case None => round_price(order.quantity  * price.unit_price)
 			case Some(deal) => {
 				println(order.quantity)
 				println(deal.quantity)
 				val deal_cost = get_deal_cost(order, deal)
 				val non_deal_cost = (order.quantity % deal.quantity) * price.unit_price
-				deal_cost + non_deal_cost
+				round_price(deal_cost + non_deal_cost)
 			}
 		}
 		
@@ -125,6 +125,7 @@ object Checkout extends App{
 		helper(order.split(",").toList, "", order )
 	}
 
+	def round_price(n: Double) = { val s = math pow (10, 2); (math round n * s) / s }
 
 
 }
