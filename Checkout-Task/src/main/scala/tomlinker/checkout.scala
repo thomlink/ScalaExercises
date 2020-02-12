@@ -23,6 +23,8 @@
 
 package com.tomlinker
 
+import com.tomlinker.Checkout.{order, orders_formatted, prices, prices_formatted}
+
 import scala.annotation.tailrec
 import scala.io.StdIn._
 
@@ -34,7 +36,7 @@ object Checkout extends App{
 
 
 
-	val order = "A,D,C,D,A,B,C,A,D,C,B,A,C,A"
+	val order = "A,A,A,A,A,A"
 	val prices = List("A 50 3 for 130","B 30 2 for 45","C 20","D 15")
 
 	val prices_formatted = format_prices(prices)
@@ -46,6 +48,10 @@ object Checkout extends App{
 	
 	println(get_total_cost(orders_formatted, prices_formatted))
 	
+	def makeOrder(order: String, prices: List[String]) : Double = {
+		get_total_cost(format_order(order), format_prices(prices))
+	}
+
 
 	def get_total_cost(orders: List[ItemOrder], prices: List[ItemPrice]) : Double = orders match {
 		case Nil => 0
@@ -55,10 +61,10 @@ object Checkout extends App{
 
 	def get_item_cost(order: ItemOrder, prices: List[ItemPrice] ) : Double = {
 		def helper(order: ItemOrder, price: ItemPrice) : Double = price.deal match {
-			case None => {
-				order.quantity  * price.unit_price
-			}
+			case None => order.quantity  * price.unit_price
 			case Some(deal) => {
+				println(order.quantity)
+				println(deal.quantity)
 				val deal_cost = get_deal_cost(order, deal)
 				val non_deal_cost = (order.quantity % deal.quantity) * price.unit_price
 				deal_cost + non_deal_cost
