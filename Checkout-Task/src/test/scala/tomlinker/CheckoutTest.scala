@@ -21,12 +21,38 @@ class CheckoutTest extends org.scalatest.FunSuite {
 
   }
 
-  //def format_order(order: String) : List[ItemOrder] = {
+  test("formatOrder test"){
+    //format_order(order: String) : List[ItemOrder]
 
-  //def occurrences(src: String, tgt: String): Int = {
+    val order = "A,D,C,D,A,B,C,A,D,C,B,A,C,A"
+    val expected_output = List(ItemOrder("A", 5), ItemOrder("D", 3), ItemOrder("C", 4), ItemOrder("B", 2)  )
 
-  //def format_price(price: String) : ItemPrice = {
+    assert(format_order(order) == expected_output)
+  }
 
+  test("occurrences test") {
+    //occurrences(src: String, tgt: String): Int
+
+    val a_string = "aabccdaabccdaabccdccdbbaccaab"
+
+    assert(occurrences(a_string, "aab") == 4)
+    assert(occurrences(a_string, "bc" ) == 3)
+    assert(occurrences(a_string, "d") == 4)
+  }
+
+  test("formatPrice test") {
+    //def format_price(price: String) : ItemPrice = {
+    val price_1 = "A 40 4 for 100"
+    val expected_output_1 = ItemPrice("A", 40, Some(Deal(4, 100)) )
+    val price_2 = "Jeremy784 34.5"
+    val expected_output_2 = ItemPrice("Jeremy784", 34.5, None)
+
+    assert(format_price(price_1) == expected_output_1)
+    assert(format_price(price_2) == expected_output_2)
+
+  }
+
+  test
   //def format_prices(prices: List[String]) : List[ItemPrice] = prices match {
 
   //def get_deal_cost(order: ItemOrder, deal: Deal) : Double = {

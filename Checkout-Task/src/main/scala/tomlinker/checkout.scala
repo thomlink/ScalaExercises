@@ -30,8 +30,9 @@ import scala.io.StdIn._
 
 object Checkout extends App{
 
-	case class Deal(quantity: Int, price: Int)
-	case class ItemPrice(name: String, unit_price: Int, deal: Option[Deal])
+	case class Deal(quantity: Int, price: Double)
+											//Name must not contain spaces
+	case class ItemPrice(name: String, unit_price: Double, deal: Option[Deal])
 	case class ItemOrder(name: String, quantity: Int)
 
 
@@ -103,8 +104,8 @@ object Checkout extends App{
 	def format_price(price: String) : ItemPrice = {
 		val split_price = price.split(" ").toList
 		split_price.length match {
-			case x if (x > 4) 	=> ItemPrice(split_price(0), split_price(1).toInt, Some(Deal(split_price(2).toInt, split_price(4).toInt)) )
-			case _ 				=> ItemPrice(split_price(0), split_price(1).toInt, None)
+			case x if (x > 4) 	=> ItemPrice(split_price(0), split_price(1).toDouble, Some(Deal(split_price(2).toInt, split_price(4).toDouble)) )
+			case _ 				=> ItemPrice(split_price(0), split_price(1).toDouble, None)
 			
 		}
 	}
