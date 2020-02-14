@@ -37,8 +37,8 @@ object Checkout extends App{
 
 
 
-	val order = "A,A,A,A,A,A"
-	val prices = List("A 50 3 for 130","B 30 2 for 45","C 20","D 15")
+	val order = "A,A,B,B,B,B,C,C,D"
+	val prices = List("A 50 3 for 120","B 30 2 for 45","C 20","D 15")
 
 	val prices_formatted = format_prices(prices)
 	val orders_formatted = format_order(order)
