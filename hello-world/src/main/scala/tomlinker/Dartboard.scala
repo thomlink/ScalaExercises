@@ -13,19 +13,20 @@ package com.tomlinker
 import scala.annotation.tailrec
 import scala.io.StdIn._
 
-object dartboard extends App{
-	
-	
-	println(dartboardScores())
-	
-	def dartboardScores() : String = {
-		def helper(current: Int) : String = current match {
-			case x if x > 20 => ""
-			case x => x.toString + "\t" + (x*2).toString + "\t" + (x*3).toString + "\n" + helper(current + 1)
-		}
-		helper(1)
-	}
-	
+object Dartboard extends App {
+
+
+  println(dartboardScores())
+
+  def dartboardScores(): String = {
+    def helper(current: Int): String = current match {
+      case x if x > 20 => ""
+      case x => x.toString + "\t" + (x * 2).toString + "\t" + (x * 3).toString + "\n" + helper(current + 1)
+    }
+
+    helper(1)
+  }
+
 
 }
 
