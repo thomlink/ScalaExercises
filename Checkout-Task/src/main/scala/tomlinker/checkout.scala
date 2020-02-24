@@ -21,12 +21,7 @@
 
 package com.tomlinker
 
-import com.tomlinker.Checkout.{
-  order,
-  orders_formatted,
-  prices,
-  prices_formatted
-}
+import com.tomlinker.Checkout.{order, orders_formatted, prices, prices_formatted}
 
 import scala.annotation.tailrec
 import scala.io.StdIn._
@@ -91,8 +86,7 @@ object Checkout extends App {
 
   }
 
-  def get_item_price_from_list(item_name: String,
-                               prices: List[ItemPrice]): Option[ItemPrice] =
+  def get_item_price_from_list(item_name: String, prices: List[ItemPrice]): Option[ItemPrice] =
     prices match {
       case Nil =>
         None
@@ -141,16 +135,12 @@ object Checkout extends App {
   }
 
   def format_order(order: String): List[ItemOrder] = {
-    def helper(order_list: List[String],
-               seen: String,
-               order_string: String): List[ItemOrder] =
+    def helper(order_list: List[String], seen: String, order_string: String): List[ItemOrder] =
       order_list match {
         case Nil =>
           Nil
         case x :: xs if (occurrences(seen, x) == 0) =>
-          ItemOrder(x, occurrences(order_string, x)) :: helper(xs,
-                                                               seen + x,
-                                                               order_string)
+          ItemOrder(x, occurrences(order_string, x)) :: helper(xs, seen + x, order_string)
         case _ :: xs =>
           helper(xs, seen, order_string)
       }
