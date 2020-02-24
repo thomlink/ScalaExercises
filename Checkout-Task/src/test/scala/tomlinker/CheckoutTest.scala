@@ -2,6 +2,7 @@ package com.tomlinker
 
 import com.tomlinker.Checkout._
 
+
 class CheckoutTest extends org.scalatest.FunSuite {
   println("winning")
   assert("foo" == "foo")
