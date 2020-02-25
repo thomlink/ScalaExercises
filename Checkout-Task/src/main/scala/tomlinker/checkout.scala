@@ -21,21 +21,18 @@
 
 package com.tomlinker
 
-//import com.tomlinker.Checkout.{order, orders_formatted, prices, prices_formatted}
-
-
 object Checkout extends App {
-
+  case class Cost(price: BigDecimal, points: Int)
   case class Deal(quantity: Int, price: BigDecimal)
 
   //Name must not contain spaces
   case class ItemPrice(unit_price: BigDecimal, deal: Option[Deal])
 
   //case class ItemOrder(name: String, quantity: Int)
-  
+
   //val order =
   //  "A,A,B,B,B,B,C,C,D"
-  val order_formatted = Map("A" -> 2, "B" -> 4, "C" -> 2, "D" -> 1)
+  val order_formatted = Map("A" -> 5)
   val prices_formatted = Map(
     "A" -> ItemPrice(BigDecimal(50), Some(Deal(3, BigDecimal(120)))),
     "B" -> ItemPrice(BigDecimal(30), Some(Deal(2, BigDecimal(45.55)))),
@@ -45,37 +42,47 @@ object Checkout extends App {
 
   println(get_total_cost(order_formatted, prices_formatted))
 
-  //println(prices_formatted)
-  //println(orders_formatted)
-  //println(get_item_cost(orders_formatted(0), prices_formatted));
 
- 
 
-  def get_total_cost(orders: Map[String, Int], prices: Map[String, ItemPrice]): BigDecimal =
-    orders.map{ order => get_item_cost(order, prices)}.sum
-  
 
-  def get_item_cost(order: (String, Int), prices: Map[String, ItemPrice]): BigDecimal = {
+  def get_total_cost(orders: Map[String, Int], prices: Map[String, ItemPrice]): Cost = {
+    // Fold: Takes an initial value for an accumulator (doesn't have to be numeric)
+    //        takes a folding function - this function has 2 parameters
+    //            - an accumulator (of type of the initial value)
+    //            - a the current value of the type you're folding over
+    //            The function body itself can be anything, so long as it returns the type of accumulator
+    Cost(
+      orders.foldLeft(BigDecimal(0))((acc, x) => acc + get_item_cost(x, prices).price),
+      orders.foldLeft(0)((acc, x) => acc + get_item_cost(x, prices).points)
+    )
+  }
 
-    def helper(orderQuantity: Int, price: ItemPrice): BigDecimal = 
-      price.deal.fold(orderQuantity * price.unit_price) ( deal => {
-        val deal_cost = 
-          get_deal_cost(order, deal)
-        val non_deal_cost = 
-          (orderQuantity % deal.quantity) * price.unit_price
-        deal_cost + non_deal_cost
-      })
-    
+  def get_item_cost(order: (String, Int), prices: Map[String, ItemPrice]): Cost = {
+    def helper(orderQuantity: Int, price: ItemPrice): Cost = price.deal match {
+      case x if x.isEmpty == true =>
+        Cost(orderQuantity * price.unit_price, (orderQuantity * price.unit_price).toInt)
+      case x => {
+        val deal_cost =
+          get_deal_cost(order, x.get)
+        val non_deal_cost =
+          (orderQuantity % x.get.quantity) * price.unit_price
+        Cost(deal_cost + non_deal_cost, deal_cost.toInt + (non_deal_cost * 2).toInt)
+      }
+    }
+
     val (orderName, orderQuantity) = order
 
     val price =
       prices.get(orderName)
 
-    price.fold(BigDecimal(0))(price => helper(orderQuantity, price))
+    price.fold(Cost(0, 0))(price => helper(orderQuantity, price))
     // \price -> f price
   }
 
   def get_deal_cost(order: (String, Int), deal: Deal): BigDecimal = {
+
+    import com.tomlinker.Checkout.get_deal_cost
+
     val (_, orderQuantity) = order
 
     val n_deals = orderQuantity / deal.quantity
@@ -83,24 +90,6 @@ object Checkout extends App {
       n_deals * deal.price
     } else 0
   }
-
-//  def format_prices(prices: List[String]): Map[String, ItemPrice] = {
-//    prices.map(x => format_price(x)).toMap
-//  }
-//
-//  def format_price(price: String): (String, ItemPrice) = {
-//    val split_price =
-//      price
-//        .split(" ")
-//        .toList
-//    split_price.length match {
-//      case x if (x > 4) =>
-//        split_price(0) -> ItemPrice(split_price(1).to, Some(Deal(split_price(2).toInt, split_price(4).toBigDecimal)))
-//      case _ =>
-//        split_price(0) -> ItemPrice(split_price(1).toBigDecimal, None)
-//
-//    }
-//  }
 
   // occurences of a substring in a string
   def occurrences(src: String, tgt: String): Int = {
@@ -137,8 +126,6 @@ object Checkout extends App {
 //           "",
 //           order)
 //  }
-
-
   //TODO convert BigDecimal to BigDecimal
 
 }
