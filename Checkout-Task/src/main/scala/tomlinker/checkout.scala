@@ -42,9 +42,6 @@ object Checkout extends App {
 
   println(get_total_cost(order_formatted, prices_formatted))
 
-
-
-
   def get_total_cost(orders: Map[String, Int], prices: Map[String, ItemPrice]): Cost = {
     // Fold: Takes an initial value for an accumulator (doesn't have to be numeric)
     //        takes a folding function - this function has 2 parameters
@@ -60,12 +57,15 @@ object Checkout extends App {
   def get_item_cost(order: (String, Int), prices: Map[String, ItemPrice]): Cost = {
     def helper(orderQuantity: Int, price: ItemPrice): Cost = price.deal match {
       case x if x.isEmpty == true =>
-        Cost(orderQuantity * price.unit_price, (orderQuantity * price.unit_price).toInt)
+        Cost(orderQuantity * price.unit_price, (orderQuantity * price.unit_price * 2).toInt)
       case x => {
         val deal_cost =
           get_deal_cost(order, x.get)
         val non_deal_cost =
           (orderQuantity % x.get.quantity) * price.unit_price
+
+        println("Deal Cost: " + deal_cost.toString())
+        println("Non deal cost: " + non_deal_cost.toString())
         Cost(deal_cost + non_deal_cost, deal_cost.toInt + (non_deal_cost * 2).toInt)
       }
     }
@@ -91,12 +91,18 @@ object Checkout extends App {
     } else 0
   }
 
-  // occurences of a substring in a string
+  // occurrences of a substring in a string
   def occurrences(src: String, tgt: String): Int = {
     src
       .sliding(tgt.length)
       .count(window => window == tgt)
   }
+
+  // "ABCAB" "AB"
+  // sliding(2, 1)
+  // ["AB", "BC", "CA", "AB"]
+  // sliding (2, 2)
+  // ["AB", "CA"]
 
 //  def format_order(order: String): Map[String, Int] = {
 //  // "A,B,C,D,E,F,A,B"
@@ -126,6 +132,4 @@ object Checkout extends App {
 //           "",
 //           order)
 //  }
-  //TODO convert BigDecimal to BigDecimal
-
 }
